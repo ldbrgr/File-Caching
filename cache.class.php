@@ -27,7 +27,7 @@
             $this->time = time();
         }
         
-        public static function instence()
+        public static function instance()
         {
             return new Cache;
         }
@@ -35,7 +35,7 @@
         public static function Start_cache($time = false, $path = '', $serial = true)
         {
             /* $time = min to expire, $path = folder to save cache (in folder cache), $serial = use serialize */
-            $obj = Cache::instence();
+            $obj = Cache::instance();
             $rpath = ROOT_DIR .'/cache/' .$path .$obj->cache_file;
 
             if($data = $obj->Load_cache($path,$time)) // if cache exists
